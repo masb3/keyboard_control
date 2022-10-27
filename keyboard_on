@@ -1,0 +1,7 @@
+#!/bin/bash
+#xinput reattach 15 3
+id=`xinput list 2> /dev/null | grep 'AT Translated Set 2 keyboard' | awk -F = '{print $2}' | awk '{print $1}'`
+slave=3
+echo "id=${id}"
+echo "slave=${slave}"
+xinput reattach $id $slave
